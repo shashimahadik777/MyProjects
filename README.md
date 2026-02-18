@@ -1,0 +1,5 @@
+[spring ai Day2-3.java](https://github.com/user-attachments/files/25379505/spring.ai.Day2-3.java)
+[spring ai Day1.java](https://github.com/user-attachments/files/25379504/spring.ai.Day1.java)
+[spring ai Day 6.java](https://github.com/user-attachments/files/25379503/spring.ai.Day.6.java)
+[spring ai Day 5.java](https://github.com/user-attachments/files/25379502/spring.ai.Day.5.java)
+[spring ai Day 4.java](https://github.com/user-attachments/files/25379501/spring.ai.Day.4.java)
