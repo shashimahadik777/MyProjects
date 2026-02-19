@@ -1,4 +1,4 @@
-package com.poc.springaidemo;
+package com.poc.springaidemo.config;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
@@ -23,19 +23,19 @@ import java.util.List;
 @AllArgsConstructor
 @Validated
 public class MailConfig {
-    @NotNull
+    //@NotNull
     private String to;
-    @NotNull
+    //@NotNull
     private String from;
-    @Max(value = 40)
-    @Min(value = 20)
+    //@Max(value = 40)
+    //@Min(value = 20)
     private Integer age;
 
-    @NotNull
+    //@NotNull
     private String firstname;  //loose binding
-    @NotNull
+    //@NotNull
     private String lastname; //loose binding
-    @NotNull
+    //@NotNull
     private String middlename; //loose binding
 
     private String[] cc;
@@ -47,7 +47,7 @@ public class MailConfig {
     @Data
     public class Credential {
         private String username;
-        @Size(min = 4, max = 8)
+        //@Size(min = 4, max = 8)
         private String password;
     }
 }

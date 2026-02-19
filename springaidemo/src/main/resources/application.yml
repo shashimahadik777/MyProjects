@@ -1,0 +1,13 @@
+#In case if we want to add options to all endpoints
+#1. Global options via application.yml
+
+spring:
+  ai:
+      openai:
+        chat:
+          options:
+            temperature: 0.7
+            max-tokens: 100
+            top-p: 0.9
+            frequency-penalty: 0.5
+            presence-penalty: 0.3

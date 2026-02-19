@@ -3,7 +3,7 @@ package com.poc.springaidemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages ={"com.poc.springaidemo"})
 public class SpringaidemoApplication {
 
 	public static void main(String[] args) {

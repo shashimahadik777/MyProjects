@@ -1,4 +1,4 @@
-package com.poc.springaidemo;
+package com.poc.springaidemo.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySources;
 //@PropertySource("file:\\C:\\Training\\student1.properties")
 @PropertySources({
         @PropertySource("classpath:student.properties"),
-        @PropertySource("file:\\C:\\Training\\student1.properties")
+        //@PropertySource("file:\\C:\\Training\\student1.properties")
 })
 @ConfigurationProperties(prefix = "student")
 @Data  //@Getter+@Setter
