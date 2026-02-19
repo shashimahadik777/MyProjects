@@ -9,6 +9,11 @@ Handson Assignments
 Handson 1
 Create a Springboot service using SpringAI that takes dynamic user input to generate a customized travel itinerary. Participants must demonstrate how to use a PromptTemplate to manage dynamic variables and a System message to define the persona
 
+curl -X 'GET' \
+  'http://localhost:8080/api/travel/itinerary?destination=pune&days=3&interests=food&budget=5000' \
+  -H 'accept: */*'
+
+
 Handson 2
 You are building a Personal banking Advisor using Spring AI. The advisor must be able to retrieve the user’s current balance from a database(imagine we have db with all customer details) using tool calling
 
