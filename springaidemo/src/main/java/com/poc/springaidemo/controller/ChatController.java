@@ -1,12 +1,19 @@
 package com.poc.springaidemo.controller;
 
+import com.poc.springaidemo.service.ChatService;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.ai.tool.annotation.ToolParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ChatController {
+
+    @Autowired
+    ChatService service;
 
     private ChatClient chatClient;
 
@@ -26,5 +33,11 @@ public class ChatController {
         return chatClient.prompt(message).call().content();
 
     }
+
+    @GetMapping("/getinfo")
+    public String getInfo(@RequestParam String msg) {
+        return service.getChat(msg);
+    }
+
 
 }
