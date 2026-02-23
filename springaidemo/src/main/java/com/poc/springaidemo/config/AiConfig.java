@@ -31,11 +31,11 @@ public class AiConfig {
                 .build();
     }
 
-    @Bean
+    //@Bean
 
-    public ChatClient chatClient(ChatClient.Builder builder) {
-        return builder.build();
-    }
+//    public ChatClient chatClient(ChatClient.Builder builder) {
+//        return builder.build();
+//    }
 
 
     @Bean

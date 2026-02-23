@@ -1,0 +1,11 @@
+INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL, BALANCE)
+VALUES (1001, 'Ravi Kumar', 'ravi.kumar@example.com', 25000.50);
+
+INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL, BALANCE)
+VALUES (1002, 'Anita Sharma', 'anita.sharma@example.com', 48000.00);
+
+INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL, BALANCE)
+VALUES (1003, 'Suresh Patel', 'suresh.patel@example.com', 15000.75);
+
+INSERT INTO CUSTOMER (CUSTOMER_ID, NAME, EMAIL, BALANCE)
+VALUES (1004, 'Meena Joshi', 'meena.joshi@example.com', 32000.20);
