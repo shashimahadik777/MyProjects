@@ -1,5 +1,10 @@
 package com.poc.springaidemo.controller;
 
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor;
+import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.memory.InMemoryChatMemoryRepository;
+import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
@@ -15,10 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.convert.support.DefaultConversionService;
 import org.springframework.core.io.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -31,6 +33,24 @@ public class PromptController {
 
     @Autowired
     OpenAiChatOptions chatOptions;
+//13. Implement PromptChatMemoryAdvisor - send previous conversation history in the prompt
+    private ChatClient chatClients;
+
+    public PromptController(ChatClient.Builder builder) {
+        ChatMemory chatMemory= MessageWindowChatMemory.builder()
+                .chatMemoryRepository(new InMemoryChatMemoryRepository())
+                .maxMessages(30)
+                .build();
+        this.chatClients=builder.defaultAdvisors(PromptChatMemoryAdvisor.builder(chatMemory).build()).build();
+    }
+
+    @PostMapping("/{conversationId}")
+    public String home(@PathVariable String conversationId, @RequestBody String message) {
+        return chatClients.prompt()
+                .advisors(advisor -> advisor.param("conversationId", conversationId))
+                .user(message)
+                .call().content();
+    }
 
     @GetMapping("/m1")
     public String message1() {
